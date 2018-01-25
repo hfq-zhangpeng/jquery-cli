@@ -1,7 +1,7 @@
 let basic = require('./webpack.config.js')('dev');
 var webpack = require('webpack');
 
-basic.plugins.concat(new webpack.HotModuleReplacementPlugin());
+basic.plugins.push(new webpack.HotModuleReplacementPlugin());
 
 module.exports = Object.assign({
     output: {

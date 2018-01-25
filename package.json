@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --devtool cheap-module-source-map --inline --hot --port 11001 --config ./static/webpack/webpack.dev.config.js",
-    "release": ""
+    "release": "webpack --config ./static/webpack/webpack.release.config.js"
   },
   "author": "zp",
   "license": "ISC",
