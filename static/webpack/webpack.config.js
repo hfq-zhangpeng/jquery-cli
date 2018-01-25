@@ -85,10 +85,6 @@ module.exports = type => ({
             filename: "[name].css",
             "allChunks": true
         }),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'common',
-            filename: 'common.js',
-        }),
     ],
     resolve: {
         extensions: ['.js', '.css', '.html'],

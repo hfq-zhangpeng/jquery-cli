@@ -32,7 +32,6 @@
     "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
-    "axios": "^0.17.1",
-    "html5-history-api": "^4.2.8"
+    "axios": "^0.17.1"
   }
 }
