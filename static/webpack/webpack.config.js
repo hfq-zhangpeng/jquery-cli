@@ -40,6 +40,13 @@ module.exports = type => ({
             test: /\.html$/,
             exclude: /src/,
             loader: 'html-loader'
+        }, {
+            test: /\.js$/,
+            loader: 'eslint-loader',
+            include: path.join(root, '/src'),
+            options: {
+                formatter: require('eslint-friendly-formatter')
+            }
         }, ],
     },
     plugins: [
