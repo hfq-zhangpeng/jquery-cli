@@ -1,4 +1,4 @@
-let basic = require('./webpack.config.js')('dev');
+let basic = require('./webpack.config.js')('release');
 var webpack = require('webpack');
 let path = require("path");
 
@@ -13,9 +13,7 @@ basic.plugins.push(new webpack.optimize.UglifyJsPlugin({
 module.exports = Object.assign({
     output: {
         path: path.join(root, '/dist/'),
-        filename: 'smart.min.js',
-        library: 'smart',
-        libraryTarget: "umd",
+        filename: '[name].[hash].js',        
         publicPath: '/dist/',
         chunkFilename: '[name].chunk.js',
     }

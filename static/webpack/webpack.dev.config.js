@@ -1,15 +1,20 @@
 let basic = require('./webpack.config.js')('dev');
 var webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 basic.plugins.push(new webpack.HotModuleReplacementPlugin());
+
+basic.plugins.push(new HtmlWebpackPlugin({
+    filename: 'index.html',
+    template: 'index.html',
+    inject: true
+}));
 
 module.exports = Object.assign({
     output: {
         path: '/dist/',
-        filename: 'smart.min.js',
-        library: 'smart',
-        libraryTarget: "umd",
-        publicPath: '/dist/',
+        filename: 'main.js',
+        publicPath: '/',
         chunkFilename: '[name].chunk.js',
     },
     watch: true,
@@ -21,4 +26,3 @@ module.exports = Object.assign({
         hot: true, //这里配置启动命令可以添加--hot
     }
 }, basic);
-

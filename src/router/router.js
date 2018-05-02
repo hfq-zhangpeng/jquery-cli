@@ -4,15 +4,15 @@ import $ from 'jquery';
 console.log('router ready');
 
 App.router('/test1', ctx => {
-    $('#output').html('this is test1');
+    $('#output').html(`this is test1 ${ctx.path}`);
 });
 
 App.router('/test2', ctx => {
-    $('#output').html('this is test2');
+    $('#output').html(`this is test2 ${ctx.path}`);
 });
 
 App.router('/test3', ctx => {
-    $('#output').html('this is test3');
+    $('#output').html(`this is test3 ${ctx.path}`);
 });
 
 App.init();

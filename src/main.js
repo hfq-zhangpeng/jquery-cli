@@ -1,3 +1,2 @@
-import router from './router/router';
+require('./router/router');
 
-console.log('smart ready');

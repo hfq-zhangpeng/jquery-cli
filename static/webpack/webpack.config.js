@@ -25,7 +25,10 @@ module.exports = type => ({
             loader: 'url-loader?limit=5000',
         }, {
             test: /\.html$/,
-            exclude: /static/,
+            exclude: [
+                /static/,
+                path.join(root, 'index.html')
+            ],
             use: "happypack/loader?id=art-template-pack",
         }, {
             test: /\.css$/,
@@ -36,10 +39,6 @@ module.exports = type => ({
                 fallback: "style-loader",
                 use: "happypack/loader?id=css-pack"
             })
-        }, {
-            test: /\.html$/,
-            exclude: /src/,
-            loader: 'html-loader'
         }, {
             test: /\.js$/,
             loader: 'eslint-loader',
@@ -89,7 +88,7 @@ module.exports = type => ({
             }]
         }),
         new ExtractTextPlugin({
-            filename: "[name].css",
+            filename: "main.css",
             "allChunks": true
         }),
     ],
